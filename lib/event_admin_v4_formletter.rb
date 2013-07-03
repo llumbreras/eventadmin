@@ -1,7 +1,7 @@
 require 'csv'
 require 'sunlight/congress'
 
-Sunlight::Congress.api_key = "api key"
+Sunlight::Congress.api_key = "API KEY"
 
 def clean_zipcode(zipcode)
 	zipcode.to_s.rjust(5,"0")[0..4]
@@ -31,7 +31,7 @@ contents.each do | content |
 	legislators = legislators_by_zipcode(content[:zipcode])
 
 	personal_letter = template_letter.gsub('FIRST_NAME', name)
-	personal_letter.gsub!('LEGISLATORS', legislators)
+	personal_letter = personal_letter.gsub('LEGISLATORS', legislators)
 
 	puts personal_letter
 end
