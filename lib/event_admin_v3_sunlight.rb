@@ -1,7 +1,7 @@
 require 'csv'
 require 'sunlight/congress'
 
-Sunlight::Congress.api_key = "insert key"
+Sunlight::Congress.api_key = "api key"
 
 def clean_zipcode(zipcode)
 	zipcode.to_s.rjust(5,"0")[0..4]
